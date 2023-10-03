@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record</title>
+    <style>
+         table,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        body{
+            background-image: url('https://images.unsplash.com/photo-1472289065668-ce650ac443d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZWR1Y2F0aW9uJTIwYmFja2dyb3VuZHxlbnwwfHwwfHw%3D&w=1000&q=80');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .btnstyle {
+            background-color:rgb(141, 141, 174);
+            color:black;
+            padding:10px;
+            border-radius: 15px;
+            border:none;
+            font-size: 25px;
+            margin: 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+     <center><b>{{ message }}</b></center>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<body>
+    <a href="{{url_for('dashboard')}}"><button style="float:left" class="btnstyle">Back</button></a>
+    <center><h1 style="color:black;">Subjects Record</h1></center>
+    <div style="margin-left:30%; margin-top:2%;">
+   <div>
+        <a href="{{url_for('addsubjects')}}"><button class="btnstyle">Add Records</button></a>
+   </div>
+   <table cellpadding="10px">
+    <br>
+    <tr>
+        <td><h2>course id</h2></td>
+        <td><h2>course title</h2></td>
+        <td><h2>Maxmarks</h2></td>
+        
+    </tr>
+    
+    {% for i in data %}
+        <tr>
+            <td>{{i[0]}}</td>
+            <td>{{i[1]}}</td>
+            <td>{{i[2]}}</td>
+            <td><a href="{{url_for('update',courseid=i[0])}}">Update</a></td>
+            <td><a href="{{url_for('delete',courseid=i[0])}}">Delete</a></td>
+
+        </tr>
+    {% endfor %}
+       
+   </table>
+    </div>
+</body>
+</html>

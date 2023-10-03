@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+         body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      background-image: url('https://wallpaperaccess.com/full/16692.jpg');
+      color:aliceblue;
+    }
+    
+    .container {
+      width: 300px;
+      padding: 16px;
+      background-color: rgba(128, 128, 128, 0.429);
+      margin: 0 auto;
+      margin-top: 100px;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.926);
+    }
+    
+    h2 {
+      text-align: center;
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 1px solid black;
+      border-radius: 4px;
+    }
+    
+    button {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      border-radius: 4px;
+    }
+    
+    button:hover {
+      background-color: #45a049;
+    }
+    </style>
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <center><b>{{ message }}</b></center>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form action="/login" method="POST">
+        <label>User Name:</label>
+        <p><input placeholder="Enter your Name" type="text" name="name"/></p>
+        <label>Password:</label>
+        <p><input placeholder="Enter password" type="text" name="password"/></p>
+        <button type="submit">Login</button>
+        <br><a href="{{url_for('forget')}}" style="color:rgb(232, 18, 18);">Forget Password?</a>
+    </form>
+</div>
+</body>
+</html>

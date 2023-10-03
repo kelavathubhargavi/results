@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sem Data</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <style>
+        body{
+            background-color:rgba(216, 112, 147, 0.815);
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-size: 20px;
+            color:black;
+        }
+        .btnstyle {
+            background-color:rgba(14, 14, 14, 0.811);
+            color:white;
+            padding:10px;
+            border-radius: 10px;
+            border:none;
+            font-size: 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <a href="{{url_for('dashboard')}}"><button style="float:left" class="btnstyle">Back</button></a>
+    <form method="POST">
+        <div class="Results">
+            <center><h1 style="color:black; margin-top:2%; margin-right:8%; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Add Sem Results</h1></center>
+            <div style="margin-left:43%; margin-top:2%;">
+                <label>Student id</label><br>
+                <select name="id" required>
+                    {% for i in data %}
+                    <option>{{i[0]}}</option>
+                    {% endfor %}
+                </select><br><br>
+                <label>Course id</label><br>
+                <select name="course" required>
+                    {% for i in cdata %}
+                    <option>{{i[0]}}</option>
+                    {% endfor %}
+                </select><br><br>
+                <label>Section</label><br>
+                <select name="section" required>
+                    <option>Select Section</option>
+                    <option>MSCS</option>
+                    <option>MSCA</option>
+                    <option>MSDS</option>
+                    <option>PMCS</option>
+                    <option>MPC</option>
+                    <option>CSCS</option>
+                </select><br><br>
+                <label>Sem</label><br>
+                <select name="sem">
+                    <option>Select sem</option>
+                    <option>semI</option>
+                    <option>semII</option>
+                    <option>semIII</option>
+                    <option>semIV</option>
+                    <option>semV</option>
+                    <option>semVI</option>
+                </select><br><br>
+                <label>Sem Marks</label><br>
+                <input placeholder="Enter Marks" type="number" name="marks" required/><br>
+                <br><button type="button" class="btnstyle">Submit</button>
+            </div>
+        </div>
+    </form>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</body>
+</html>

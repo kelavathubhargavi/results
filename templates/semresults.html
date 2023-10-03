@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record</title>
+    <style>
+         table,td{
+            border: 2px solid red;
+            border-collapse: collapse;
+        }
+        body{
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTubfN7jKJckDHJvWku8A-124g_638EkmfMw&usqp=CAU');
+            background-repeat: no-repeat;
+            background-size: cover;
+            color:white;
+        }
+        .btnstyle {
+            background-color:white;
+            color:black;
+            padding:10px;
+            border-radius: 20px;
+            border:none;
+            font-size: 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+     <center><b>{{ message }}</b></center>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<body>
+    <a href="{{url_for('dashboard')}}"><button style="float:left" class="btnstyle">Back</button></a>
+
+    <form method="POST">
+    <center><h1 style="color:rgb(38, 245, 176);">Sem Results</h1></center>
+    <div style="margin-left:20%; margin-top:2%;"
+        <center><input type="search" placeholder="Enter Rollno" name="search"/>
+        <button>Search</button></center>
+    <br><br>
+   <table cellpadding="8px">
+    <br>
+    <tr>
+        <td><h2>Student id</h2></td>
+        <td><h2>Course id</h2></td>
+        <td><h2>Sem</h2></td>
+        <td><h2>Semmarks</h2></td>
+        <td><h2>Internal1</h2></td>
+        <td><h2>Internalmarks1</h2></td>
+        <td><h2>Internal2</h2></td>
+        <td><h2>Internalmarks2</h2></td>
+
+    </tr>
+    
+    {% for i in data %}
+        <tr>
+            <td>{{i[0]}}</td>
+            <td>{{i[1]}}</td>
+            <td>{{i[2]}}</td>
+            <td>{{i[3]}}</td>
+            <td>{{i[4]}}</td>
+            <td>{{i[5]}}</td>
+            <td>{{i[6]}}</td>
+            <td>{{i[7]}}</td>
+            <td><a href="{{url_for('semdelete',stdid=i[0],courseid=i[1])}}" style="color:floralwhite;">Delete</a></td>
+
+
+        </tr>
+    {% endfor %}
+       
+   </table>
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,29 @@
+
+.go{
+    color:black;
+}
+.para{
+    color:black;
+    
+}
+#contact{
+    background-color:grey;
+    padding-bottom: 4em;
+}
+.socialicons{
+    font-size: 40px;
+    cursor: pointer;
+}
+#icenter{
+    text-align: center;
+}
+.fa-brands{
+    color:white;
+}
+.fa-facebook,.fa-instagram,.fa-linkedin{
+    margin:40px;
+}
+.fa-facebook:hover,.fa-instagram:hover,.fa-linkedin:hover{
+    color:#c90202;
+}
+

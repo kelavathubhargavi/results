@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <style>
+        #contact{
+        background-color:grey;
+        padding-bottom: 4em;
+      }
+    </style>
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+     <center><b>{{ message }}</b></center>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<body>
+    <img src="https://www.siddharthamahila.ac.in/images/sdm_logo.jpg" width=100% height="150vh"/>
+    <nav class="navbar navbar-expand-lg navbar-default bg-dark">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <center><div class="navbar-nav">
+            <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{{url_for('search')}}">Results</a>
+            <a class="nav-link" href="#aboutSection">About Us</a>
+            <a class="nav-link" href="#contactSection">Contact Us</a>
+          </div></center>
+        </div>
+      </nav><br>
+      <h1><marquee> Results </marquee></h1>
+   <center><img src="https://estudentbook.com/admin/img/institute_images/1629441117-Sri%20Durga%20Malleswara%20Siddhartha%20Mahila%20Kalasala-01.jpg" w-100% h-50% /></center><br>
+    
+   <div id="aboutSection">
+   <h2 class="go">About Us</h2><br>
+   <p class="para">SDMSMK-Sri Durga Malleswara Siddhartha Mahila Kalasala established in 1975 and located in Vijayawada. The Sri Durga Malleswara Siddhartha Mahila Kalasala is a premier college in Andhra Pradesh known as excellent educational standards, various educational programs, grand faculty, and various extracurricular activities and modern infrastructure. SDMSMK-Sri Durga Malleswara Siddhartha Mahila Kalasala affiliated by Krishna University the college supports the highest superior standards and best practices in higher education.
+   </p>
+   </div>
+  <!-- contact us Section -->
+  <form method="POST">
+   <div id="contactSection">
+    <section id="contact">
+      <div class="container">
+        <h1 class="text-center pt-3 pb-3" style="color:black;">Contact Us</h1>
+        <div class="row">
+          <div class="col-12 col-lg-6">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3825.5441368861866!2d80.64220727388515!3d16.498604784244773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35fabb276f3e69%3A0xaeeeca3535d79031!2sSri%20Durga%20Malleswara%20Siddhartha%20Mahila%20Kalasala!5e0!3m2!1sen!2sin!4v1681714197533!5m2!1sen!2sin" width="450" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+          </div>
+          <div class="col-12 col-lg-6">
+            <input class="form-control form-control-lg" type="text" placeholder="Name" name="name">
+            <input class="form-control form-control-lg mt-3" type="mail" placeholder="Email" name="email">
+            <textarea class="form-control mt-3" id="exampleFormControlTextarea1" placeholder="text" rows="3" name="message"></textarea>
+            
+            <button type="submit" class="btn btn-success mt-3"> Submit </button>
+          </div>
+        </div>
+      </div>
+    </form>
+      <div class="container" id="icenter">
+        <div class="socialicons">
+          <a href="https://www.facebbok.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.intsagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    
+        </div>
+      </div>
+    </section>
+  </div>
+   
+   
+
+   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</body>
+</html>

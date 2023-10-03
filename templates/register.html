@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR73QbQM6UsygLNrSUeyc_TJNFYeuTCLojIow&usqp=CAU');
+            background-size: cover;
+        }
+        b{
+            color:antiquewhite;
+        }
+        label {
+            color: white;
+        }
+        .btnstyle {
+            background-color: rgb(234, 33, 33);
+            color:black;
+            padding:10px;
+            border-radius: 8px;
+            border:none;
+            margin: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <center><b>{{ message }}</b></center>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<body>
+    <center>
+    <h1 style="color:white">Admin Registration Page</h1></center>
+    <div style="margin-left:42%;; margin-top:5%">
+    <form method="POST">
+        <label>Name:</label>
+        <p><input placeholder="Enter Name" type="text" name="name" required/></p>
+        <label>Password:</label>
+        <p><input placeholder="Enter password" type="text" name="password" required/></p>
+        <label>Email</label>
+        <p><input placeholder="Enter Your Email" type="email" name="email" required/></p>
+        <button class="btnstyle">Register</button>
+    </form>
+</div>
+
+</body>
+</html>
